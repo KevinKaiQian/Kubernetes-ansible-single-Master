@@ -24,7 +24,7 @@
 | :----- |  :----:  | :----:  |  :----:  |
 | 192.168.126.111 |K8S-M1|  2   |   2G    |
 | 192.168.126.112 |K8S-N1|  2   |   2G    |
-| 192.168.126.113 |K8S-N1|  2   |   2G    |
+| 192.168.126.113 |K8S-N2|  2   |   2G    |
 
 # 使用前提配置和注意事项（所有主机）
 > * 关闭selinux和disbled防火墙(确保getenforce的值是Disabled配置文件改了后应该重启)
@@ -152,5 +152,12 @@ cp roles/scp/files/images.tar.gz roles/addNode/files/
 cp roles/TLS-NODE/files/calico-kube-proxy-adm64.tar.gz roles/addNode/files/
 ansible-playbook DISPLAY_SKIPPED_HOSTS=false addNode.yml 
  ```
-
+```
+kubectl get node
+NAME      STATUS    ROLES     AGE       VERSION
+k8s-m1    Ready     master    2h        v1.10.0
+k8s-n1    Ready     node      2h        v1.10.0
+k8s-n2    Ready     node      2h        v1.10.0
+k8s-n3    Ready     node      49s       v1.10.0
+```
 
