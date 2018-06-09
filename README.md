@@ -29,7 +29,7 @@
 # 使用前提配置和注意事项（所有主机）
 > * 关闭selinux和disbled防火墙(确保getenforce的值是Disabled配置文件改了后应该重启)
 > * 关闭swap(/etc/fstab也关闭)
-> * 设置ntp同步时间(多半克隆虚拟机的时间一致这步无所谓了)
+> * 设置ntp同步时间(克隆虚拟机的话时间是一致这步无所谓了)
 > * disable和stop掉NetworkManager
 > * 安装epel源和openssl和expect
 > * 设置各台主机名(参照我那样,分发hosts看下面使用)
