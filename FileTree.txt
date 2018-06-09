@@ -1,0 +1,111 @@
+.
+├── ansible.cfg
+├── AutoScp
+├── AutoSsh
+├── debug.yml
+├── FileTree.txt
+├── group_vars
+│   └── all.yml
+├── hosts
+├── hosts_scp.sh
+├── Image.sh
+├── k8s.yml
+├── roles
+│   ├── common
+│   │   ├── files
+│   │   ├── tasks
+│   │   └── templates
+│   │       └── hosts.j2
+│   ├── deployMaster
+│   │   ├── files
+│   │   ├── tasks
+│   │   │   ├── all.yml
+│   │   │   └── main.yml
+│   │   └── templates
+│   │       ├── 10-kubelet.conf.j2
+│   │       ├── audit-policy.yml.j2
+│   │       ├── calico-rc
+│   │       ├── encryption.yml.j2
+│   │       ├── etcd.config.yml.j2
+│   │       ├── etcd.yml.j2
+│   │       ├── haproxy.cfg.j2
+│   │       ├── haproxy.yml.j2
+│   │       ├── keepalived.yml.j2
+│   │       ├── kube-apiserver.yml.j2
+│   │       ├── kube-controller-manager.yml.j2
+│   │       ├── kubelet.service.j2
+│   │       └── kube-scheduler.yml.j2
+│   ├── etcd-ca
+│   │   ├── files
+│   │   │   ├── ca-config.json
+│   │   │   ├── etcd-ca-csr.json
+│   │   │   └── etcd-csr.json
+│   │   └── tasks
+│   │       ├── copy_to_otherMaster.yml
+│   │       ├── etcd_ca.yml
+│   │       └── main.yml
+│   ├── KubernetesExtraAddons
+│   │   ├── files
+│   │   │   ├── getToken.sh
+│   │   │   ├── kube-monitor.yml.conf
+│   │   │   ├── kubernetes-dashboard.yaml.conf
+│   │   │   └── open-api_ClusterRoleBinding.yml.conf
+│   │   ├── tasks
+│   │   │   ├── Dashboard.yml
+│   │   │   ├── Heapster.yml
+│   │   │   └── main.yml
+│   │   └── templates
+│   ├── Kubernets-ca
+│   │   ├── files
+│   │   │   ├── admin-csr.json
+│   │   │   ├── apiserver-csr.json
+│   │   │   ├── ca-config.json
+│   │   │   ├── ca-csr.json
+│   │   │   ├── front-proxy-ca-csr.json
+│   │   │   ├── front-proxy-client-csr.json
+│   │   │   ├── kubelet-csr.json
+│   │   │   ├── manager-csr.json
+│   │   │   └── scheduler-csr.json
+│   │   └── tasks
+│   │       ├── ca.yml
+│   │       └── main.yml
+│   ├── scp
+│   │   ├── files
+│   │   │   ├── cfssl
+│   │   │   ├── cfssljson_linux-amd64
+│   │   │   ├── cfssl_linux-amd64
+│   │   │   ├── cni-plugins-amd64-v0.6.0.tgz
+│   │   │   ├── images.tar.gz
+│   │   │   ├── kubectl
+│   │   │   └── kubelet
+│   │   └── tasks
+│   │       ├── allscp.yml
+│   │       ├── cfssl.yml
+│   │       └── main.yml
+│   └── TLS-NODE
+│       ├── files
+│       │   ├── apiserver-to-kubelet-rbac.yml.conf
+│       │   ├── calicoctl
+│       │   ├── calico-kube-proxy-adm64.tar.gz
+│       │   └── kubelet-bootstrap-rbac.yml.conf
+│       ├── tasks
+│       │   ├── calico.yml
+│       │   ├── KubernetesCoreAddons.yml
+│       │   ├── main.yml
+│       │   ├── Node.yml
+│       │   └── TLS.yml
+│       └── templates
+│           ├── 10-kubelet.conf.j2
+│           ├── bootstrap-token-Secret.yml.conf.j2
+│           ├── calico-rc.j2
+│           ├── calico.yml.conf.j2
+│           ├── kube-dns.yml.conf.j2
+│           ├── kubelet.service.j2
+│           └── kube-proxy.yml.conf.j2
+├── step2.yml
+├── step3.retry
+├── step3.yml
+└── test.yml
+
+27 directories, 80 files
+

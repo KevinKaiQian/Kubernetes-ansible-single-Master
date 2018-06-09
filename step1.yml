@@ -1,0 +1,8 @@
+---
+- hosts: all
+  roles:
+    - scp
+    - 'etcd-ca'
+    - 'Kubernetes-ca'
+    - 'deployMaster'
+    
