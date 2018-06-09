@@ -11,6 +11,7 @@ set -e
 [[ `rpm -qa` =~ openssl ]] || yum install -y openssl
 
 systemctl stop firewalld && systemctl disable firewalld
+systemctl stop NetworkManager && systemctl disable NetworkManager
 
 #disabled the selinux
 setenforce 0
