@@ -76,7 +76,7 @@ https://storage.googleapis.com/kubernetes-release/release/v1.10.0/bin/linux/amd6
 
 **2 配置脚本属性**
 
- * 修改当前目录ansible的`hosts`分组成员文件,填写otherMaster和Node下面填写各成员的ip地址,localhost那部分和分组名别动
+ * 修改当前目录ansible的`hosts`分组成员文件,只在Node下面填写各成员的ip地址,不要乱改动和所有分组名别动
 
  * 修改`group_vars/all.yml`里面的参数
  1. ansible_ssh_pass为ssh密码(如果每台主机密码不一致请注释掉`all.yml`里的`ansible_ssh_pass`后按照的`hosts`文件里的注释那样写上每台主机的密码）
