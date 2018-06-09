@@ -26,7 +26,7 @@
 | 192.168.126.112 |K8S-N1|  2   |   2G    |
 | 192.168.126.113 |K8S-N1|  2   |   2G    |
 
-# 使用前提和注意事项（所有主机）
+# 使用前提配置和注意事项（所有主机）
 > * 关闭selinux和disbled防火墙(确保getenforce的值是Disabled配置文件改了后应该重启)
 > * 关闭swap(/etc/fstab也关闭)
 > * 设置ntp同步时间(多半克隆虚拟机的时间一致这步无所谓了)
@@ -142,12 +142,15 @@ kube-dns-558b84dbb9-7zcf5   3/3       Running   0          10m
 ```
  4. 访问地址会在master1的家目录生成对应的使用指导的txt文件,获取Dashboard的token脚本(token一段时间会失效页面登陆需要重新获取)在家目录下
 
- 5. 后续添加node的话,先在当前的ansible目录改hosts,添加[newNode]分组写上成员,然后执行以下命令添加node
+**5 后续添加Node节点**
+ 1. 需要加入的node设置好环境,参照前面的`使用前提配置和注意事项`
+ 3. 在当前的ansible目录改hosts,添加[newNode]分组写上成员
+ 3. 后执行以下命令添加node
  ```
 cp roles/scp/files/cni-plugins-amd64* roles/addNode/files/
 cp roles/scp/files/images.tar.gz roles/addNode/files/
 cp roles/TLS-NODE/files/calico-kube-proxy-adm64.tar.gz roles/addNode/files/
-ansible-playbook addNode.yml DISPLAY_SKIPPED_HOSTS=false
+ansible-playbook DISPLAY_SKIPPED_HOSTS=false addNode.yml 
  ```
 
 
