@@ -152,8 +152,9 @@ cp roles/scp/files/images.tar.gz roles/addNode/files/
 cp roles/TLS-NODE/files/calico-kube-proxy-adm64.tar.gz roles/addNode/files/
 ansible-playbook DISPLAY_SKIPPED_HOSTS=false addNode.yml 
  ```
+ 4. 然后查看是否添加上
 ```
-kubectl get node
+$ kubectl get node
 NAME      STATUS    ROLES     AGE       VERSION
 k8s-m1    Ready     master    2h        v1.10.0
 k8s-n1    Ready     node      2h        v1.10.0
