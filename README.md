@@ -159,6 +159,12 @@ kube-dns-654684d656-j8xzx   3/3       Running   0          10m
 ```
  4. 访问地址会在master1的家目录生成对应的使用指导的txt文件,获取Dashboard的token脚本(token一段时间会失效页面登陆需要重新获取)在家目录下
 
-
+ 5. 后续添加node的话,先在当前的ansible目录改hosts,添加[newNode]分组写上成员,然后执行以下命令添加node
+ ```
+cp roles/scp/files/cni-plugins-amd64* roles/addNode/files/
+cp roles/scp/files/images.tar.gz roles/addNode/files/
+cp roles/TLS-NODE/files/calico-kube-proxy-adm64.tar.gz roles/addNode/files/
+ansible-playbook addNode.yml DISPLAY_SKIPPED_HOSTS=false
+ ```
 
 
