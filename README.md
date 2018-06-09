@@ -53,8 +53,8 @@ yum localinstall ansible-2.5.4-1.el7.ans.noarch.rpm -y
 
 **1 git clone**
 ```
-git clone https://github.com/zhangguanzhang/Kubernetes-ansible.git
-cd Kubernetes-ansible
+git clone https://github.com/zhangguanzhang/Kubernetes-ansible-single-Master.git
+cd Kubernetes-ansible-single-Master
 ```
 `github`文件大小限制推送,`kubectl`和`kubelet`大小太大我上传百度云了
 自行下载[download](https://pan.baidu.com/s/1v7uN4ht-7qvA1uk9ZMmuMA)
