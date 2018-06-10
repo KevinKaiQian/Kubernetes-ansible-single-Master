@@ -30,7 +30,7 @@
 > * 关闭selinux和disbled防火墙(确保getenforce的值是Disabled配置文件改了后应该重启)
 > * 关闭swap(/etc/fstab也关闭)
 > * 设置ntp同步时间(克隆虚拟机的话时间是一致这步无所谓了)
-> * disable和stop掉NetworkManager
+> * disable和stop掉NetworkManager,Centos关掉后查看下网卡配置文件是否正常,部分人出现了停掉后掩码变成32位情况
 > * 安装epel源和openssl和expect
 > * 设置各台主机名(参照我那样,分发hosts看下面使用)
 > * 每台主机端口和密码最好一致(不一致最好懂点ansible修改hosts文件)
