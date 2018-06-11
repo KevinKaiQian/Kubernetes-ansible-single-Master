@@ -5,7 +5,6 @@
     directory_mode: 755
   with_items:
     - "{{ Manifests_path }}"
-    - "{{ haproxy_path }}"
     - '/etc/systemd/system/kubelet.service.d'
     - "{{ kubelete_data_path }}"
     - "{{ kubernetes_log }}"
@@ -18,13 +17,10 @@
     - { src: 'kube-apiserver.yml.j2', dest: "{{ Manifests_path }}" }
     - { src: 'kube-controller-manager.yml.j2', dest: "{{ Manifests_path }}" }
     - { src: 'kube-scheduler.yml.j2', dest: "{{ Manifests_path }}" }
-    - { src: 'haproxy.yml.j2', dest: "{{ Manifests_path }}" }
-    - { src: 'keepalived.yml.j2', dest: "{{ Manifests_path }}" }
     - { src: 'etcd.yml.j2', dest: "{{ Manifests_path }}" }
     - { src: 'etcd.config.yml.j2', dest: "{{ etcd_path }}" }
     - { src: 'encryption.yml.j2', dest: "{{ kubernetes_path }}" }
     - { src: 'audit-policy.yml.j2', dest: "{{ kubernetes_path }}" }
-    - { src: 'haproxy.cfg.j2', dest: "{{ haproxy_path }}" }
     - { src: 'kubelet.service.j2', dest: '/lib/systemd/system' }
     - { src: '10-kubelet.conf.j2', dest: '/etc/systemd/system/kubelet.service.d' }
 
