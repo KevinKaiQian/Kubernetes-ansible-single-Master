@@ -18,17 +18,6 @@
   when: inventory_hostname == 'localhost'
 
 
-- name: 分发Master Kubelet Certificate
-  copy:
-    src: "{{ kubernetes_pki}}/{{ item }}"
-    dest: "{{ kubernetes_pki }}"
-  with_items:
-    - "kubelet-{{ ansible_hostname }}-key.pem"
-    - "kubelet-{{ ansible_hostname }}.pem"
-    - "{{ ca }}.pem"
-  when: inventory_hostname in groups['otherMaster']
-
-
 #  AutoScp password src_file dest_file port
 #  AutoSsh password dest_ip port command
 - name: 生成kubelet.conf的 kubeconfig
@@ -64,21 +53,3 @@
     chdir: "{{ kubernetes_pki }}"
   when: inventory_hostname == 'localhost'
 
-
-- name: 复制凭证到其他master节点
-  copy:
-    src: "{{ item }}"
-    dest: "{{ kubernetes_pki }}"
-  with_fileglob:
-    - "{{ kubernetes_pki }}/*"
-  when: inventory_hostname in groups['Master']
-
-- name: 复制Kubernetes config到其他master节点
-  copy:
-    src: "{{ kubernetes_path }}/{{ item }}"
-    dest: "{{ kubernetes_path }}"
-  with_items:
-    - 'admin.conf'
-    - 'controller-manager.conf'
-    - 'scheduler.conf'
-  when: inventory_hostname in groups['Master']
