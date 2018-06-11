@@ -1,4 +1,0 @@
-export ETCD_ENDPOINTS="https://192.16.35.11:2379,https://192.16.35.12:2379,https://192.16.35.13:2379"
-export ETCD_CA_CERT_FILE="/etc/etcd/ssl/etcd-ca.pem"
-export ETCD_CERT_FILE="/etc/etcd/ssl/etcd.pem"
-export ETCD_KEY_FILE="/etc/etcd/ssl/etcd-key.pem"
