@@ -6,5 +6,5 @@
 - include: etcd_ca.yml
   when: inventory_hostname == 'localhost'
 
-- include: copy_to_otherMaster.yml
-  when: inventory_hostname in groups['otherMaster']
+#- include: copy_to_otherMaster.yml
+#  when: inventory_hostname in groups['otherMaster']
