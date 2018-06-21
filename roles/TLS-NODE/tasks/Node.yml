@@ -8,6 +8,7 @@
     - '/etc/systemd/system/kubelet.service.d'
     - "{{ kubelete_data_path }}"
     - "{{ kubernetes_log }}"
+    - "{{ kubernetes_path }}/manifests"
 
 - name: 分发etcd凭证到Node上
   copy:
